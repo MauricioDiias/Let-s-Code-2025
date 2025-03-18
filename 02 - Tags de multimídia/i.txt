@@ -1,0 +1,37 @@
+
+________________________________________
+🌍 Tecnologia e Programação 💻
+A tecnologia tem evoluído rapidamente, transformando a maneira como vivemos, trabalhamos e nos comunicamos.
+No coração dessa revolução, as linguagens de programação desempenham um papel fundamental, permitindo o
+desenvolvimento de softwares, aplicativos e sistemas inteligentes que moldam o futuro digital.
+________________________________________
+📌 Principais Linguagens de Programação
+Linguagem \	Ano de Criação	\Principais Usos
+Python\	1991\	Inteligência Artificial, Data Science, Desenvolvimento Web
+JavaScript\	1995\	Desenvolvimento Web, Aplicações Frontend e Backend
+Java\	1995\	Aplicações Empresariais, Mobile (Android), Backend
+C++\	1985\	Jogos, Sistemas Operacionais, Softwares de Alto Desempenho
+PHP	\1995\	Desenvolvimento Web Backend
+Ruby\	1995\	Desenvolvimento Web (Ruby on Rails)
+________________________________________
+
+❤🔯
+📌 O que é Desenvolvimento Full Stack?
+O desenvolvimento Full Stack refere-se a profissionais que possuem conhecimento tanto no
+frontend (interface do usuário) quanto no backend (servidor, banco de dados e lógica de negócio).
+Esse tipo de profissional é altamente valorizado no mercado por sua capacidade de desenvolver
+soluções completas, desde a interface do usuário até o armazenamento dos dados.
+🚀 Benefícios do Full Stack:
+•	Maior flexibilidade
+•	Alta empregabilidade
+•	Independência no desenvolvimento
+•	Compreensão completa dos projetos
+________________________________________
+📌 Tecnologias Utilizadas no Full Stack
+Área |	Frontend|	Backend
+Desenvolvimento Web|	HTML, CSS, JavaScript|	Node.js, PHP, Python
+Frameworks	|React, Angular, Vue.js	| Express, Django, Laravel
+Banco de Dados|	MySQL, PostgreSQL, MongoDB (usado tanto no Frontend quanto no Backend)	
+________________________________________
+
+

@@ -1,0 +1,130 @@
+.container {
+  background-color: aquamarine;
+  display: flex;
+  height: 250px;
+  align-items: flex-start;
+}
+
+.container2 {
+  background-color: aquamarine;
+  display: flex;
+  height: 250px;
+  align-items: center;
+}
+.container3 {
+  background-color: aquamarine;
+  display: flex;
+  height: 250px;
+  align-items: end;
+}
+
+.container4 {
+  background-color: aquamarine;
+  display: flex;
+  height: 250px;
+  justify-content: start;
+}
+
+.container5 {
+  background-color: aquamarine;
+  display: flex;
+  height: 250px;
+  justify-content: center;
+}
+
+.container6 {
+  background-color: aquamarine;
+  display: flex;
+  height: 250px;
+  justify-content: end;
+}
+
+.container7 {
+  background-color: aquamarine;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container8 {
+  background-color: aquamarine;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container9 {
+  background-color: aquamarine;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container10 {
+  background-color: aquamarine;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container10 {
+  background-color: aquamarine;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container11 {
+  background-color: blueviolet;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.container12 {
+  background-color: rgb(126, 15, 229);
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.container13 {
+  background-color: blueviolet;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container14 {
+  background-color: blueviolet;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.container15 {
+  background-color: rgb(43, 226, 80);
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container16 {
+  background-color: rgb(43, 226, 80);
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border: 1px solid black;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado do Cadastro</title>
+  </head>
+  <body>
+    <h2>Dados Preenchidos</h2>
+
+    <p>
+      Nome:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("nome")
+          );
+        </script>
+      </b>
+    </p>
+    <p>
+      Email:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("email")
+          );
+        </script></b
+      >
+    </p>
+    <p>
+      Idade:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("idade")
+          );
+        </script></b
+      >
+    </p>
+    <p>
+      Data de Nascimento:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("data_nascimento")
+          );
+        </script></b
+      >
+    </p>
+
+    <p>
+      Experiência em programação:
+      <b
+        ><script>
+          let experiencia = new URLSearchParams(window.location.search).get(
+            "experiencia"
+          );
+          document.write(
+            experiencia
+              ? experiencia.charAt(0).toUpperCase() + experiencia.slice(1)
+              : "Não informado"
+          );
+        </script></b
+      >
+    </p>
+
+    <p>
+      Linguagens que conhece:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("linguagens") ||
+              "Nenhuma informada"
+          );
+        </script></b
+      >
+    </p>
+
+    <p>
+      Nível de experiência:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("nivel") ||
+              "Não informado"
+          );
+        </script></b
+      >
+    </p>
+
+    <p>
+      Projetos e interesses em programação:
+      <b
+        ><script>
+          document.write(
+            new URLSearchParams(window.location.search).get("comentarios") ||
+              "Não informado"
+          );
+        </script></b
+      >
+    </p>
+    <br />
+    <p>
+      Perfil do GitHub:
+      <b
+        ><script>
+          let github = new URLSearchParams(window.location.search).get(
+            "github"
+          );
+          document.write(
+            github
+              ? `<a href="${github}" target="_blank">${github}</a>`
+              : "Não informado"
+          );
+        </script></b
+      >
+    </p>
+
+    <a href="cadastro.html">Voltar</a>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introcução ao CSS</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      div {
+        width: 100px;
+        height: 150px;
+        background-color: rgb(255, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Introcução ao CSS</h1>
+    </header>
+    <main>
+      <p>
+        CSS é a sigla para o termo em inglês Cascading Style Sheets que,
+        traduzido para o português, significa Folha de Estilo em Cascatas. O CSS
+        é fácil de aprender e entender e é facilmente utilizado com as
+        linguagens de marcação HTML ou XHTML.
+      </p>
+      <h2>Inline</h2>
+      <section>
+        <p>
+          <code>
+            < div style="width: 100px; height: 100px; background-color:
+            blueviolet" >
+          </code>
+        </p>
+      </section>
+      <section
+        style="width: 100px; height: 100px; background-color: blueviolet"
+      >
+        Div
+      </section>
+      <h2>Tag Interna</h2>
+      <div></div>
+      <div></div>
+      <div></div>
+      <h2>Externo</h2>
+      <article>Style no arquivo externo</article>
+      <article class="artic">Stule por class</article>
+      <article class="artic"></article>
+      <article></article>
+      <article id="blog">Blog</article>
+      <article id="javaScript">JavaScript</article>
+      <article>Blog</article>
+
+      <h2>Exemplo de Prioridade de seletores</h2>
+      <div id="turma">
+        <div class="aluno" id="prof"></div>
+        <div class="aluno"></div>
+        <div class="aluno"></div>
+        <div class="aluno"></div>
+      </div>
+
+      <h2>Dimensões</h2>
+
+      <div id="dimensoes"></div>
+      <div id="relativa"></div>
+
+      <h2>Margin</h2>
+      <div class="ext"></div>
+      <div class="int"></div>
+      <div class="ext"></div>
+    </main>
+  </body>
+</html>

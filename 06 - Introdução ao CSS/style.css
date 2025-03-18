@@ -1,0 +1,75 @@
+/* Seletor por tag */
+
+article {
+  width: 150px;
+  height: 50px;
+  border: 1px solid green;
+  background-color: aqua;
+}
+
+/* Seletor por classe */
+
+.artic {
+  width: 200px;
+  height: 150px;
+  background-color: blue;
+}
+
+/* Seletor por id */
+
+#blog {
+  width: 200px;
+  height: 150px;
+  background-color: rgb(224, 26, 171);
+}
+
+#javaScript {
+  width: 200px;
+  height: 150px;
+  background-color: rgb(207, 207, 18);
+}
+
+/* ---------------------------- */
+
+#turma {
+  width: 100vh;
+  height: 300px;
+  background-color: rgb(50, 50, 151);
+}
+
+.aluno {
+  width: 50px;
+  height: 50px;
+  background-color: aquamarine;
+  margin: 3px;
+}
+
+#prof {
+  background-color: black;
+}
+
+#dimensoes {
+  width: 150px;
+  height: 150px;
+}
+
+#relativa {
+  width: 100%;
+
+  background-color: rgb(77, 75, 75);
+}
+
+.ext {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+.int {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(104, 117, 227);
+  margin: 10px;
+  border: 5px solid rgb(128, 25, 25);
+  padding: 10px;
+  border-radius: 15%;
+}

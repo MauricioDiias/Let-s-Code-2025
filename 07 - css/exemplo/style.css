@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  /* background-color: black; */
+  height: 50px;
+  /* padding: 0 10px 0 10px; */
+}
+
+li {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 5px;
+  /* background-color: aqua; */
+  /* padding: 0 20px 0 20px; */
+  list-style: none;
+  cursor: pointer;
+}
+
+li:hover {
+  /* background-color: aqua; */
+  border-bottom: 1px solid black;
+}
