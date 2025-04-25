@@ -94,19 +94,39 @@ console.log(numero);
 
 // COMPARAÇÃO
 //  = ATRIBUIÇÃO
-// == IGUAL
+// == IGUAL (valor)
 console.log("2" == 2);
-// === ESTRITAMENTE IGUAL
+// === ESTRITAMENTE IGUAL  (valor e tipo)
 console.log("2" === 2);
 
-// != DIFERENTE
+// != DIFERENTE (valor)
 console.log("2" != 2);
 
-// !==  ESTRITAMENTE DIFERENTE
+// !==  ESTRITAMENTE DIFERENTE (valor e tipo)
 console.log("2" !== 2);
 
 console.log("----Resultado----");
 console.log(4 !== 4);
+
+// > Maior que
+
+console.log("--Maior--");
+console.log(5 > 4);
+
+// < Menor que
+console.log("--Menor--");
+console.log(5 < 4);
+
+// >= Maior ou Igual
+console.log("--Maior ou Igual--");
+console.log(5 >= 4);
+console.log(4 >= 4);
+
+// <= Menor ou Igual
+
+console.log("--Menor ou Igual--");
+console.log(5 <= 4);
+console.log(4 <= 4);
 
 // OPERADORES LÓGICOS
 
@@ -125,7 +145,7 @@ console.log(true || false);
 console.log(false || true);
 console.log(false || false);
 
-// NÂO !
+// NEGAÇÃO !
 
 console.log("---NÃO---");
 
