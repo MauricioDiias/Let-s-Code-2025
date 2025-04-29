@@ -72,9 +72,9 @@ switch (dia) {
 
 // FOR
 
-// for (let numero = 0; numero < 10; numero += 1) {
-//   console.log(numero);
-// }
+for (let numero = 0; numero < 10; numero += 1) {
+  console.log(numero);
+}
 
 // EXEMPLOS
 
