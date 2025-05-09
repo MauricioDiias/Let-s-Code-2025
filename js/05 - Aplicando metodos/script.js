@@ -90,3 +90,90 @@ console.log(nomes);
 //slice trás apartir do indice
 
 console.log(nomes.slice(3));
+
+const nomesFormatados = nomes.map((nome) => {
+  return nome[0].toUpperCase() + nome.slice(1);
+});
+
+console.log(nomesFormatados);
+
+let turmaNoite = [
+  {
+    nome: "Pedro ",
+    sobreNome: "Zacarias",
+    idade: 18,
+    cidade: "Parnaíba",
+    letsCode: true,
+    notas: [10, 9, 8],
+  },
+  {
+    nome: "Jonatas  ",
+    sobreNome: "Portela",
+    idade: 14,
+    cidade: "Magalhães de Almeida",
+    letsCode: true,
+    notas: [10, 9, 9],
+  },
+  {
+    nome: "Viviane",
+    sobreNome: "Silva",
+    idade: 19,
+    cidade: "Parnaíba",
+    letsCode: false,
+    notas: [7, 6, 5],
+  },
+];
+
+console.log(turmaNoite);
+
+const maioIdade = turmaNoite.filter((aluno) => {
+  return aluno.idade > 18;
+});
+console.log(maioIdade);
+
+console.log("--- Lista de Alunos -");
+
+turmaNoite.map((aluno) =>
+  console.log(`
+    Nome: ${aluno.nome} ${aluno.sobreNome}
+    Idade: ${aluno.idade}
+    Cidade: ${aluno.cidade}
+    1° Nota: ${aluno.notas[0]}
+    2° Nota: ${aluno.notas[1]}
+    3° Nota: ${aluno.notas[2]}
+    Média : ${aluno.notas.reduce((total, nota) => total + nota) / 3}
+
+    `)
+);
+
+turmaNoite.map((aluno) =>
+  console.log(aluno.notas.reduce((total, nota) => total + nota) / 3)
+);
+
+const alunosNotas = turmaNoite.map((a) => a.notas);
+
+console.log(alunosNotas);
+
+const medias = alunosNotas.map((notas) => {
+  return notas.reduce((total, nota) => {
+    return total + nota / notas.length;
+  }, 0);
+});
+
+console.log(medias);
+
+const div = document.getElementById("id");
+div.innerHTML = turmaNoite.map(
+  (aluno) =>
+    `<ul>
+      <li>
+      Nome: ${aluno.nome} ${aluno.sobreNome}
+      Idade: ${aluno.idade}
+      Cidade: ${aluno.cidade}
+      1° Nota: ${aluno.notas[0]}
+      2° Nota: ${aluno.notas[1]}
+      3° Nota: ${aluno.notas[2]}
+      Média : ${aluno.notas.reduce((total, nota) => total + nota) / 3}
+      </li><ul>
+      `
+);

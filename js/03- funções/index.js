@@ -32,12 +32,12 @@
 //   console.log(`2 x ${n} = ${2 * n}`);
 // }
 
-// for (let valor = 1; valor <= 10; valor++) {
-//   console.log(`TABUADA DO ${valor}`);
-//   for (let n = 0; n <= 10; n += 1) {
-//     console.log(`${valor} x ${n} = ${valor * n}`);
-//   }
-// }
+for (let valor = 1; valor <= 10; valor++) {
+  console.log(`TABUADA DO ${valor}`);
+  for (let n = 0; n <= 10; n += 1) {
+    console.log(`${valor} x ${n} = ${valor * n}`);
+  }
+}
 
 // FUNÇÕES
 
