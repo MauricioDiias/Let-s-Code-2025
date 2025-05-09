@@ -174,6 +174,6 @@ div.innerHTML = turmaNoite.map(
       2° Nota: ${aluno.notas[1]}
       3° Nota: ${aluno.notas[2]}
       Média : ${aluno.notas.reduce((total, nota) => total + nota) / 3}
-      </li><ul>
+      </li></ul>
       `
 );
