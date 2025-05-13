@@ -5,7 +5,7 @@
 // if
 let x = 2;
 
-if (false) {
+if (true) {
   console.log("ok");
 }
 

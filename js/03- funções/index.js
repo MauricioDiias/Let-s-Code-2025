@@ -48,8 +48,10 @@ function escreverNome() {
 escreverNome();
 
 const printar = (x, y) => {
-  console.log(x, y);
+  console.log("Printar", x, y);
 };
+
+printar(5, 9);
 
 function somar(n1, n2) {
   n1 = Number(n1);
