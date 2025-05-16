@@ -163,7 +163,9 @@ console.log(`Quantidade de alunos Reprovados:`, alunosReprovados.length);
 
 console.log("----- Alunos Aprovados------- ");
 alunosAprovados.forEach((aluno) =>
-  console.log(`${aluno.nome} Nota - ${aluno.media()}`)
+  console.log(`${aluno.nome} - ${aluno.media()}`)
 );
 console.log("----- Alunos Reprovados------- ");
-alunosReprovados.forEach((aluno) => console.log(aluno.nome));
+alunosReprovados.forEach((aluno) =>
+  console.log(`${aluno.nome} - ${aluno.media()}`)
+);
