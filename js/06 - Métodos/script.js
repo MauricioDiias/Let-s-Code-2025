@@ -139,8 +139,11 @@ console.log("Lista depois do push", listaModificada);
 
 //quero excluir um aluno da lista
 
-const listaNova = listaModificada.filter(
-  (aluno) => aluno.nome !== novoAluno.nome
-);
+function deletarAluno(novoAluno) {
+  const listaNova = listaModificada.filter(
+    (aluno) => aluno.nome !== novoAluno.nome
+  );
+  return listaNova;
+}
 
-console.log("Delete marcelo", listaNova);
+console.log("Delete marcelo", deletarAluno(novoAluno));
