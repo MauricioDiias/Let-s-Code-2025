@@ -72,19 +72,6 @@ alunos.forEach((aluno) => (aluno.turno = "Noite"));
 // console.log(alunos);
 
 const alunosMaiores = alunos.filter((aluno) => aluno.idade > 17);
-// console.log(alunosMaiores);
-
-// const mediasAlunos = alunos.map((aluno) => {
-//   let media =
-//     aluno.notas.reduce((total, nota) => total + nota) / aluno.notas.length;
-//   return {
-//     nome: aluno.nome,
-//     idade: aluno.idade,
-//     media: media.toFixed(1),
-//   };
-// });
-
-// console.log(mediasAlunos);
 
 const alunosOrdenadoIdade = alunos.sort((a, b) => a.idade - b.idade);
 // console.log(alunosOrdenadoIdade);
