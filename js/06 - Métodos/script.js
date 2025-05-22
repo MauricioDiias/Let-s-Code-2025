@@ -1,7 +1,7 @@
 const alunos = [
   {
     nome: "Ana Silva",
-    idade: 17,
+    idade: 25,
     turma: "3A",
     notas: [8, 7, 9, 8.5],
     endereco: { rua: "Rua das Palmeiras, 123", cidade: "São Paulo" },
@@ -11,7 +11,7 @@ const alunos = [
   {
     nome: "Bruno Costa",
     idade: 16,
-    turma: "2B",
+    turma: "2A",
     notas: [6, 7.5, 7, 6.5],
     endereco: { rua: "Avenida Central, 456", cidade: "Rio de Janeiro" },
     ativo: true,
@@ -46,7 +46,7 @@ const alunos = [
   },
   {
     nome: "Felipe Almeida",
-    idade: 18,
+    idade: 20,
     turma: "3A",
     notas: [7, 6.5, 8, 7.5],
     endereco: { rua: "Rua Principal, 303", cidade: "Curitiba" },
@@ -56,32 +56,137 @@ const alunos = [
 ];
 
 // map cria um novo array
+
 const nomesDosAlunos = alunos.map((aluno) => aluno.nome);
 // console.log(nomesDosAlunos);
+// alunos.map((aluno) => {
+//   console.log(`Nome : ${aluno.nome},  Faltas : ${aluno.faltas}`);
+// });
+
+// alunos.forEach((aluno) =>
+//   console.log(`Nome : ${aluno.nome},  Faltas : ${aluno.faltas}`)
+// );
+
+// Criando uma nova estrutura
+
+// const alunosNomeTurma = alunos.map((aluno) => ({
+//   nome: aluno.nome,
+//   turma: aluno.turma,
+// }));
+
+// console.log(alunosNomeTurma);
+
+// // forEach;
+// alunos.forEach((aluno) => {
+//   console.log(`Nome : ${aluno.nome},  Faltas : ${aluno.faltas}`);
+// });
+
+// Reduce
+// const notas = [1, 5, 6, 9];
+// const somaDasNotas = notas.reduce((total, nota) => total + nota);
+// console.log(somaDasNotas);
 
 const mediasAlunos = alunos.map((aluno) => {
   let soma = aluno.notas.reduce((total, nota) => total + nota);
   let quantidade = aluno.notas.length;
   let media = soma / quantidade;
-  aluno.media = media.toFixed(1);
+  aluno.media = Number(media.toFixed(2));
   return aluno;
 });
-// console.log(mediasAlunos);
 
-alunos.forEach((aluno) => (aluno.turno = "Noite"));
-// console.log(alunos);
+// alunos.forEach((aluno) => {
+//   console.log(`Nome : ${aluno.nome},  Média : ${aluno.media}`);
+// });
 
-const alunosMaiores = alunos.filter((aluno) => aluno.idade > 17);
+// alunos.forEach((aluno) => {
+//   if (aluno.turma === "2A" || aluno.turma === "3A") {
+//     aluno.turno = "Noite";
+//   } else {
+//     aluno.turno = "Tarde";
+//   }
+// });
 
-const alunosOrdenadoIdade = alunos.sort((a, b) => a.idade - b.idade);
-// console.log(alunosOrdenadoIdade);
+// Operador Ternário
+alunos.forEach((aluno) => {
+  aluno.turma === "2A" || aluno.turma === "3A"
+    ? (aluno.turno = "Noite")
+    : (aluno.turno = "Tarde");
+});
 
-const alunosOrdenadoNome = alunos.sort((a, b) => a.nome.localeCompare(b.nome));
-// console.log(alunosOrdenadoNome);
+// alunos.forEach((aluno) => {
+//   console.log(
+//     `Nome : ${aluno.nome},  Turma: ${aluno.turma} Turno : ${aluno.turno}`
+//   );
+// });
+
+// Filter
+
+const alunosMaioresDeIdade = alunos.filter((aluno) => aluno.idade >= 18);
+// console.log(alunosMaioresDeIdade);
+// alunosMaioresDeIdade.forEach((aluno) => {
+//   console.log(`Nome : ${aluno.nome}, Idade: ${aluno.idade} `);
+// });
+
+//Sort()
+
+// let numeros = [1, 5, 3, 15, 59, 25];
+
+// console.log(numeros.sort((a, b) => a - b));
+// console.log(numeros.sort((a, b) => b - a));
+
+// let letras = ["G", "a", "b", "F"];
+// console.log(letras.sort((a, b) => a.localeCompare(b)));
+// console.log(letras.sort((a, b) => b.localeCompare(a)));
+
+// console.log("Alunos por idade");
+// alunos.sort((a, b) => a.idade - b.idade);
+
+// alunos.forEach((aluno) => {
+//   console.log(
+//     `Nome : ${aluno.nome}, Idade:${aluno.idade}  Média : ${aluno.media}`
+//   );
+// });
+// console.log("--------------------");
+// alunos.sort((a, b) => b.idade - a.idade);
+
+// alunos.forEach((aluno) => {
+//   console.log(
+//     `Nome : ${aluno.nome}, Idade:${aluno.idade}  Média : ${aluno.media}`
+//   );
+// });
+// console.log("--------------------");
+
+// console.log("Alunos por Média");
+// alunos.sort((a, b) => a.media - b.media);
+
+// alunos.forEach((aluno) => {
+//   console.log(
+//     `Nome : ${aluno.nome}, Idade:${aluno.idade}  Média : ${aluno.media}`
+//   );
+// });
+// console.log("--------------------");
+
+// alunos.sort((a, b) => b.media - a.media);
+
+// alunos.forEach((aluno) => {
+//   console.log(
+//     `Nome : ${aluno.nome}, Idade:${aluno.idade}  Média : ${aluno.media}`
+//   );
+// });
+
+// console.log("Alunos ordenados por Nome");
+
+alunos.sort((a, b) => a.nome.localeCompare(b.nome));
+alunos.forEach((aluno) => {
+  // console.log(
+  //   `Nome : ${aluno.nome}, Idade:${aluno.idade}  Média : ${aluno.media}`
+  // );
+});
 
 //find retorna so o primeiro que satisfaz a condição
 
-const alunoFind = alunos.find((aluno) => aluno.idade > 17);
+const alunoFind = alunos.find((aluno) => aluno.idade >= 18);
+
 // console.log(alunoFind);
 
 // retorne uma lista com os alunos ordanados pelo número de faltas
@@ -89,6 +194,11 @@ const alunoFind = alunos.find((aluno) => aluno.idade > 17);
 
 const faltasOrdenadas = alunos.sort((a, b) => b.faltas - a.faltas);
 // console.log(faltasOrdenadas);
+// alunos.forEach((aluno) => {
+//   console.log(
+//     `Nome : ${aluno.nome}, Idade:${aluno.idade}  Média : ${aluno.media}`
+//   );
+// });
 
 const listaModificada = alunos.map((aluno) => {
   if (aluno.ativo === true) {
@@ -99,7 +209,7 @@ const listaModificada = alunos.map((aluno) => {
   return aluno;
 });
 
-console.log(listaModificada);
+// Ações de adicionar ou remover usando métodos
 
 let novoAluno = {
   nome: "Marcelo Dias",
@@ -113,24 +223,58 @@ let novoAluno = {
   turno: "Noite",
 };
 
+// alunos.forEach((aluno, index) => {
+//   console.log(`${index + 1} Nome : ${aluno.nome}, Idade:${aluno.idade}  `);
+// });
+
 function adicionarAluno(aluno) {
-  listaModificada.push(aluno);
+  alunos.push(aluno);
 }
 
 adicionarAluno(novoAluno);
 
-console.log("Lista depois do push", listaModificada);
+// alunos.forEach((aluno, index) => {
+//   console.log(`${index + 1} Nome : ${aluno.nome}, Idade:${aluno.idade}  `);
+// });
 
-//formulário
-// lista de dados
+// console.log(novoAluno.nome);
 
-//quero excluir um aluno da lista
+// const listaAtualizada = alunos.filter((aluno) => aluno.nome !== novoAluno.nome);
+// const alunoDeletado = alunos.filter((aluno) => aluno.nome === novoAluno.nome);
+// console.log("Alunos");
+// alunos.forEach((aluno, index) => {
+//   console.log(`${index + 1} Nome : ${aluno.nome}, Idade:${aluno.idade}  `);
+// });
 
-function deletarAluno(novoAluno) {
-  const listaNova = listaModificada.filter(
-    (aluno) => aluno.nome !== novoAluno.nome
-  );
-  return listaNova;
+// console.log("Lista atualizada");
+
+// listaAtualizada.forEach((aluno, index) => {
+//   console.log(`${index + 1} Nome : ${aluno.nome}, Idade:${aluno.idade}  `);
+// });
+
+// console.log("Aluno Deletado");
+
+// alunoDeletado.forEach((aluno, index) => {
+//   console.log(`${index + 1} Nome : ${aluno.nome}, Idade:${aluno.idade}  `);
+// });
+
+// const alunosTarde = alunos.filter((aluno) => aluno.turno === "Tarde");
+
+// const alunosNoite = alunos.filter((aluno) => aluno.turno === "Noite");
+
+// console.log("------- Alunos Tarde------");
+// alunosTarde.forEach((aluno) =>
+//   console.log(` nome: ${aluno.nome} Turno:${aluno.turno}  `)
+// );
+// console.log("------- Alunos Noite------");
+
+// alunosNoite.forEach((aluno) =>
+//   console.log(` nome: ${aluno.nome} Turno:${aluno.turno}  `)
+// );
+
+function deletarAluno(alvo) {
+  const alunoDeletado = alunos.filter((aluno) => aluno.nome === alvo.nome);
+  return alunoDeletado;
 }
 
 console.log("Delete marcelo", deletarAluno(novoAluno));
