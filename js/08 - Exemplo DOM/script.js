@@ -33,34 +33,25 @@ function contagemRegressiva(param) {
   }
 }
 
-// contagemRegressiva();
-
 function sinal() {
-  //   console.log("executou");
   if (estadoDaCor === "verde") {
     verde.classList = "luzesApagada";
     amarelo.classList = "classAmarelo";
     estadoDaCor = "amarelo";
-    contagemRegressiva(3);
+    contagemRegressiva(5);
   } else if (estadoDaCor === "amarelo") {
     amarelo.classList = "luzesApagada";
     vermelho.classList = "classVermelho";
     estadoDaCor = "vermelho";
-    contagemRegressiva(5);
+    contagemRegressiva(7);
   } else if (estadoDaCor === "vermelho") {
     vermelho.classList = "luzesApagada";
     verde.classList = "classVerde";
     estadoDaCor = "verde";
-    contagemRegressiva(9);
+    contagemRegressiva(10);
   }
 }
 sinal();
-
-// setTimeout;
-
-// setTimeout(() => {
-//   console.log("olá");
-// }, 5000);
 
 //# CASO DE USO LIGANDO UMA DE CADA VEZ
 
@@ -82,7 +73,7 @@ sinal();
 //   }
 // });
 
-// # caso de uso ligar tudo com um click
+// # CASO DE USO LIGAR TUDO COM UM CLICK
 
 // verde.classList = "classVerde";
 // amarelo.classList = "classAmarelo";
