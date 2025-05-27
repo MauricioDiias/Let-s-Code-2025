@@ -88,9 +88,9 @@ sinal();
 //     vermelho.classList = "classVermelho";
 //     estado = "ligado";
 //   } else {
-//     verde.classList = "luzes";
-//     amarelo.classList = "luzes";
-//     vermelho.classList = "luzes";
+//     verde.classList = "luzesApagada";
+//     amarelo.classList = "luzesApagada";
+//     vermelho.classList = "luzesApagada";
 //     estado = "apagado";
 //   }
 // });
