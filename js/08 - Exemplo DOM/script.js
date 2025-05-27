@@ -10,8 +10,9 @@ console.log(vermelho);
 
 function contagemRegressiva(param) {
   let tempo = param;
-
-  let contador = setInterval(() => {
+  atualizarTempo();
+  let contador = setInterval(atualizarTempo, 1000);
+  function atualizarTempo() {
     console.log(tempo);
 
     if (estadoDaCor === "verde") {
@@ -23,13 +24,13 @@ function contagemRegressiva(param) {
     }
 
     timer.textContent = tempo;
-    tempo--;
 
-    if (tempo === 1) {
+    if (tempo <= 0) {
       clearInterval(contador);
-      // timer.textContent = 0;
+      sinal();
     }
-  }, 1000);
+    tempo--;
+  }
 }
 
 // contagemRegressiva();
@@ -41,19 +42,16 @@ function sinal() {
     amarelo.classList = "classAmarelo";
     estadoDaCor = "amarelo";
     contagemRegressiva(3);
-    setTimeout(sinal, 3000);
   } else if (estadoDaCor === "amarelo") {
     amarelo.classList = "luzesApagada";
     vermelho.classList = "classVermelho";
     estadoDaCor = "vermelho";
-    contagemRegressiva(3);
-    setTimeout(sinal, 3000);
+    contagemRegressiva(5);
   } else if (estadoDaCor === "vermelho") {
     vermelho.classList = "luzesApagada";
     verde.classList = "classVerde";
     estadoDaCor = "verde";
-    contagemRegressiva(3);
-    setTimeout(sinal, 3000);
+    contagemRegressiva(9);
   }
 }
 sinal();
