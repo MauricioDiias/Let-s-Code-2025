@@ -1,0 +1,11 @@
+.off {
+  display: none;
+}
+
+.on {
+  display: block;
+}
+
+.upgrade {
+  background-color: brown;
+}
