@@ -1,5 +1,8 @@
 const tableBody = document.querySelector("tbody");
-
+const searchInput = document.getElementById("search");
+const orderAlfa = document.getElementById("orderAlfa");
+const orderPrice = document.getElementById("orderPrice");
+let allProducts = [];
 async function buscarDados() {
   try {
     const resposta = await fetch(
@@ -21,8 +24,8 @@ async function buscarDados() {
   }
 }
 
-async function renderizarDados() {
-  const dados = await buscarDados();
+async function renderizarDados(dados) {
+  tableBody.innerHTML = "";
   dados.forEach((element) => {
     tableBody.innerHTML += `
  <tr>
@@ -40,8 +43,6 @@ async function renderizarDados() {
          `;
   });
 }
-
-renderizarDados();
 
 const dialog = document.getElementById("dialog");
 const dialogDiv = document.getElementById("container");
@@ -65,3 +66,97 @@ async function details(param) {
         `;
   });
 }
+
+async function initial() {
+  allProducts = await buscarDados();
+  renderizarDados(allProducts);
+}
+initial();
+
+searchInput.addEventListener("input", pesquisarProduto);
+
+function pesquisarProduto() {
+  let produtosFiltrados = allProducts.filter((item) =>
+    item.name.toLowerCase().includes(searchInput.value.toLowerCase())
+  );
+  renderizarDados(produtosFiltrados);
+}
+
+orderAlfa.addEventListener("click", ordenarAlfabetica);
+
+// let statusOrder = false;
+// function ordenarAlfabetica() {
+//   if (!statusOrder) {
+//     allProducts.sort((a, b) => a.name.trim().localeCompare(b.name.trim()));
+//     renderizarDados(allProducts);
+//     statusOrder = !statusOrder;
+//     orderAlfa.textContent = "🔄";
+//   } else {
+//     initial();
+//     statusOrder = !statusOrder;
+//     orderAlfa.textContent = "🔤";
+//   }
+// }
+
+let statusOrder = false;
+function ordenarAlfabetica() {
+  if (statusOrder) {
+    initial();
+    statusOrder = !statusOrder;
+    orderAlfa.textContent = "🔤";
+  } else {
+    allProducts.sort((a, b) => a.name.trim().localeCompare(b.name.trim()));
+    renderizarDados(allProducts);
+    statusOrder = !statusOrder;
+    orderAlfa.textContent = "🔄";
+  }
+}
+
+orderPrice.addEventListener("click", ordenarPeloPreco);
+
+let statusPrice = 0;
+function ordenarPeloPreco() {
+  if (statusPrice === 0) {
+    allProducts.sort((a, b) => a.price - b.price);
+    renderizarDados(allProducts);
+    statusPrice = 1;
+    orderPrice.textContent = "🔽";
+  } else if (statusPrice === 1) {
+    allProducts.sort((a, b) => b.price - a.price);
+    renderizarDados(allProducts);
+    statusPrice = 2;
+    orderPrice.textContent = "🔄";
+  } else {
+    initial();
+    orderPrice.textContent = "🔼";
+    statusPrice = 0;
+  }
+}
+
+const selectCategoria = document.getElementById("selectCategoria");
+
+selectCategoria.addEventListener("change", (e) => {
+  let nomeCategoria = e.target.value;
+
+  let produtosFiltradosPorCategory = allProducts.filter(
+    (item) => item.category === nomeCategoria
+  );
+  renderizarDados(produtosFiltradosPorCategory);
+});
+
+async function popularSelect() {
+  let produtos = await buscarDados();
+  let categorias = produtos.reduce((acumulador, item) => {
+    if (!acumulador.includes(item.category)) {
+      acumulador.push(item.category);
+    }
+
+    return acumulador;
+  }, []);
+  categorias.forEach((category) => {
+    selectCategoria.innerHTML += `
+   <option value="${category}">${category}</option>
+  `;
+  });
+}
+popularSelect();

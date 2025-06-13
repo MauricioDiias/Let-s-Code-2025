@@ -61,3 +61,7 @@ td span {
   height: 100%;
   padding: 10px;
 }
+
+th span {
+  cursor: pointer;
+}

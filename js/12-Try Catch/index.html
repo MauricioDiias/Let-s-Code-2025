@@ -8,13 +8,20 @@
   </head>
   <body>
     <h1>Tabela de Produtos</h1>
+    <input type="text" placeholder="Pesquisar Produtos" id="search" />
+    <select name="Categoria" id="selectCategoria">
+      <option value="">Selecione uma Categoria</option>
+    </select>
     <table>
       <thead>
         <tr>
           <th>ID</th>
           <th>Imagem</th>
-          <th>Nome</th>
-          <th>Preço</th>
+          <th><span id="orderAlfa">🔤</span> Nome</th>
+          <th>
+            <span id="orderPrice">🔼</span>
+            Preço
+          </th>
           <th>Categoria</th>
           <th>Detalhes</th>
         </tr>
