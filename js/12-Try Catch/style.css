@@ -65,3 +65,9 @@ td span {
 th span {
   cursor: pointer;
 }
+.container_close {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  padding-top: 10px;
+}

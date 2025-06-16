@@ -34,7 +34,10 @@ async function renderizarDados(dados) {
    <img class="productsImg"  src="${element.image}" alt="">
   </td>
   <td>${element.name}</td>
-  <td>${element.price}</td>
+  <td> ${element.price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })}</td>
   <td>${element.category}</td>
   <td>
   <span onClick=details(${element.id})>Detalhes</span>
@@ -62,6 +65,10 @@ async function details(param) {
     dialogDiv.innerHTML = `
         <h2>${item.name}</h2>
         <img class="productsImg"  src="${item.image}" alt="">
+        <p>  <strong>Preço:</strong>  ${item.price.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        })}  </p>
         <p>${item.description}</p>
         `;
   });
@@ -137,11 +144,16 @@ const selectCategoria = document.getElementById("selectCategoria");
 
 selectCategoria.addEventListener("change", (e) => {
   let nomeCategoria = e.target.value;
-
+  console.log("Evento", e);
+  console.log("nomeCategoria", nomeCategoria);
   let produtosFiltradosPorCategory = allProducts.filter(
     (item) => item.category === nomeCategoria
   );
-  renderizarDados(produtosFiltradosPorCategory);
+  if (nomeCategoria === "selecione") {
+    renderizarDados(allProducts);
+  } else {
+    renderizarDados(produtosFiltradosPorCategory);
+  }
 });
 
 async function popularSelect() {

@@ -10,7 +10,7 @@
     <h1>Tabela de Produtos</h1>
     <input type="text" placeholder="Pesquisar Produtos" id="search" />
     <select name="Categoria" id="selectCategoria">
-      <option value="">Selecione uma Categoria</option>
+      <option value="selecione">Selecione uma Categoria</option>
     </select>
     <table>
       <thead>
@@ -28,7 +28,9 @@
       </thead>
       <div class="modal" id="dialog">
         <div class="contentModal">
-          <button id="close">X</button>
+          <div class="container_close">
+            <button id="close">X</button>
+          </div>
           <div id="container"></div>
         </div>
       </div>
