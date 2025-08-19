@@ -33,21 +33,48 @@ app.get("/nomes", (req, res) => {
   }
 });
 
+//READ BY ID
+app.get("/nome/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  const nome = nomes.find((nome) => nome.id == id);
+  console.log(nome);
+  if (nome) {
+    res.json(nome);
+  } else {
+    res.status(404).json({ mensager: "Nome não encontrado" });
+  }
+});
+
 //UPDATE
 app.put("/nome/:id", (req, res) => {
   const id = req.params.id;
   const nome = req.body.nome;
   console.log(id, nome);
+  const nomeIndex = nomes.findIndex((nome) => nome.id == id);
+  if (nomeIndex != -1) {
+    nomes[nomeIndex].nome = nome;
+    res.status(200).json({ mensager: "Nome atualizado com sucesso" });
+    // res.json(nomes);
+  } else {
+    res.status(404).json({ mensager: "Nome não encontrado" });
+  }
 
   // nomes[id] = nome;
-  res.json(nomes);
 });
 
 //DELETE
-app.delete("/nomes/:id", (req, res) => {
+app.delete("/nome/:id", (req, res) => {
   const id = req.params.id;
+  const nomeIndex = nomes.findIndex((nome) => nome.id == id);
+  if (nomeIndex != -1) {
+    nomes.splice(nomeIndex, 1);
+    res.status(200).json({ mensager: "Nome deletado com sucesso" });
+  } else {
+    res.status(404).json({ mensager: "Nome não encontrado" });
+  }
   // nomes.splice(id, 1);
-  res.json(nomes);
+  // res.json(nomes);
 });
 
 app.listen(port, () => {
