@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Finanças</title>
+</head>
+
+<body>
+
+    <h1>Controle de Gastos</h1>
+    <form id="finance-form">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required>
+        <br>
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" name="valor" required>
+        <br>
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="Entrada">Receita</option>
+            <option value="Saída">Despesa</option>
+        </select>
+        <br>
+        <button type="submit">Adicionar</button>
+    </form>
+    <section>
+        <h3>Lista</h3>
+        <ul id="finance-list"></ul>
+
+
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
